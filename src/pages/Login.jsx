@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import LoginButton from "../Components/Button/LoginButton"
-
+import LogininputBox from "../Components/Input Box/LoginInputBox"
 //로그인 페이지
 
 const Login = ({ onChangeId, onChangePassword, onClickLoginButton, onClickFindAccount, onClickSignUp }) => {
@@ -9,6 +9,10 @@ const Login = ({ onChangeId, onChangePassword, onClickLoginButton, onClickFindAc
         <>
             <LoginVeiwLayout style={{ display: "flex", backgroundColor: "white" }}>
                 <LoginContainer style={{ flex: 1 }}>
+                    <InputBoxContainer style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "10px" }}>
+                        <LogininputBox placeholder="ID" onChange={onChangeId} />
+                        <LogininputBox type="password" placeholder="PASSWORD" onChange={onChangePassword} />
+                    </InputBoxContainer>
                     <LoginButton onClick={onClickLoginButton} title="LOGIN"></LoginButton>
                 </LoginContainer>
             </LoginVeiwLayout>
@@ -35,6 +39,7 @@ const LoginContainer = styled.div`
     align-items: center;
     padding: 50px;
     margin: left;
+    background: linear-gradient(180deg, #93C5EA 50%, #99BEEB 0%);
 
     @media (max-width: 760px) {
         width: 100%;
@@ -42,5 +47,18 @@ const LoginContainer = styled.div`
     }
 `;
 
+const InputBoxContainer = styled.div`
+    margin-top: 100px;
+    width: 100%;
+    font-family: nexon-regular;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    color: #b6b6b6;
+
+    @media (max-width: 760px) {
+        margin-top: 50px;
+    }
+`;
 
 export default Login;
