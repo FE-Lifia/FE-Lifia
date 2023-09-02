@@ -19,9 +19,9 @@ const InputBox = ({ placeholder, onChange, background = "#FAFAFA", type = "text"
                 height: "50px",
                 width: "100%",
                 boxSizing: "border-box",
-                border: "1px solid #B6B6B6",
+                border: "0.5px solid #B6B6B6",
                 borderRadius: "10px",
-                fontSize: "16px",
+                fontSize: "15px",
                 background: background,
                 color: "#B6B6B6",
             }}
