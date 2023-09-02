@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import LoginButton from "../Components/Button/LoginButton"
 
+//로그인 페이지
 
 const Login = ({ onChangeId, onChangePassword, onClickLoginButton, onClickFindAccount, onClickSignUp }) => {
     return (
