@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import LoginButton from "../Components/Button/LoginButton"
-import LogininputBox from "../Components/Input Box/LoginInputBox"
+import LoginButton from "../components/Button/LoginButton"
+import LogininputBox from "../components/Input Box/LoginInputBox"
 //로그인 페이지
 
 const Login = ({ onChangeId, onChangePassword, onClickLoginButton, onClickFindAccount, onClickSignUp }) => {
     return (
         <>
-            <LoginVeiwLayout style={{ display: "flex", backgroundColor: "white" }}>
-                <LoginContainer style={{ flex: 1 }}>
+            <LoginVeiwLayout style={{ display: "flex", flexDirection: "column", backgroundColor: "#5CA1E4" }}>
+            <LogoImage src={"../img/mainlogo.png"}  />
+                <LoginContainer style={{ display: "flex", flexDirection: "column", gap: "30px", marginBottom: "10px" }}>
                     <InputBoxContainer style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "10px" }}>
                         <LogininputBox placeholder="ID" onChange={onChangeId} />
                         <LogininputBox type="password" placeholder="PASSWORD" onChange={onChangePassword} />
@@ -39,6 +40,7 @@ const LoginContainer = styled.div`
     align-items: center;
     padding: 50px;
     margin: left;
+    border-radius: 20px;
     background: linear-gradient(180deg, #93C5EA 50%, #99BEEB 0%);
 
     @media (max-width: 760px) {
@@ -60,5 +62,14 @@ const InputBoxContainer = styled.div`
         margin-top: 50px;
     }
 `;
+
+const LogoImage = styled.img`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 0 auto;
+`;
+
 
 export default Login;
