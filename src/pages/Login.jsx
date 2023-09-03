@@ -9,8 +9,14 @@ import InputBox from "../components/Input Box/InputBox";
     onChangePassword,
     onClickLoginButton, //로그인
     onClickFindAccount, //비밀번호 찾기
-    onClickSignUp,
+    
     }) => {
+        
+    //회원가입으로
+    const onClickSignUp = () => {
+        window.location.href = "/signup";
+    };
+        
     return (
         <>
             <LoginViewLayout style={{ display: "flex", flexDirection: "column" }}>
