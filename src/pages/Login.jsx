@@ -1,39 +1,48 @@
 import React from "react";
 import styled from "styled-components";
 import LoginButton from "../components/Button/LoginButton";
-import InputBox from "../components/Input Box/InputBox";
+import InputBox from "../components/Input_Box/InputBox";
 // 로그인 페이지
 
-    const Login = ({
-    onChangeId,
-    onChangePassword,
-    onClickLoginButton, //로그인
-    onClickFindAccount, //비밀번호 찾기
-    
-    }) => {
-        
-    //회원가입으로
-    const onClickSignUp = () => {
-        window.location.href = "/signup";
-    };
-        
-    return (
-        <>
-            <LoginViewLayout style={{ display: "flex", flexDirection: "column" }}>
-                <LogoImage src={"../img/mainlogo.png"} />
-                <LoginContainer>
-                <InputBoxContainer style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "30px" }}>
-                    <InputBox placeholder="ID" onChange={onChangeId} />
-                    <InputBox type="password" placeholder="PASSWORD" onChange={onChangePassword} />
-                </InputBoxContainer>
-                <LoginButton onClick={onClickLoginButton} title="LOGIN"></LoginButton>
-                </LoginContainer>
-                <SignUpButton onClick={onClickSignUp}>
-                아직 아이디가 없다면? &nbsp;회원가입
-                </SignUpButton>
-            </LoginViewLayout>
-            </>
-    );
+const Login = ({
+  onChangeId,
+  onChangePassword,
+  onClickLoginButton, //로그인
+  onClickFindAccount, //비밀번호 찾기
+}) => {
+  //회원가입으로
+  const onClickSignUp = () => {
+    window.location.href = "/signup";
+  };
+
+  return (
+    <>
+      <LoginViewLayout style={{ display: "flex", flexDirection: "column" }}>
+        <LogoImage src={"../img/mainlogo.png"} />
+        <LoginContainer>
+          <InputBoxContainer
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              marginBottom: "30px",
+            }}
+          >
+            <InputBox placeholder="ID" onChange={onChangeId} />
+            <InputBox
+              type="password"
+              placeholder="PASSWORD"
+              onChange={onChangePassword}
+            />
+          </InputBoxContainer>
+          <LoginButton onClick={onClickLoginButton} title="LOGIN"></LoginButton>
+        </LoginContainer>
+        <SignUpButton onClick={onClickSignUp}>
+          아직 아이디가 없다면? &nbsp;회원가입
+        </SignUpButton>
+      </LoginViewLayout>
+    </>
+  );
 };
 
 const LoginViewLayout = styled.div`
@@ -41,7 +50,7 @@ const LoginViewLayout = styled.div`
   justify-content: center;
   align-items: center;
   height: 90vh;
-  background: linear-gradient(to right, #44BAD8, #5CA1E4, #6F96E1);
+  background: linear-gradient(to right, #44bad8, #5ca1e4, #6f96e1);
   flex-direction: column;
 
   @media (max-width: 760px) {
@@ -50,7 +59,7 @@ const LoginViewLayout = styled.div`
 `;
 
 const LoginContainer = styled.div`
-  width: 35%; 
+  width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +67,14 @@ const LoginContainer = styled.div`
   padding: 50px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
-  background: linear-gradient(to right, #8FC7EA, #94C4E9, #99C1E8, #9CBEE8, #9FBCEA);
+  background: linear-gradient(
+    to right,
+    #8fc7ea,
+    #94c4e9,
+    #99c1e8,
+    #9cbee8,
+    #9fbcea
+  );
 
   @media (max-width: 760px) {
     width: 100%;
