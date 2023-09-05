@@ -8,8 +8,9 @@ const header = () => {
     <HeaderContainer>
       <Wrapper>
         <Nav>
-          <Logo src={"../img/mainlogo_color.png"} />
+          <Logo src={"../img/mainlogo_color2.png"} />
           <Ul />
+          <SearchInput />
         </Nav>
       </Wrapper>
     </HeaderContainer>
@@ -30,8 +31,9 @@ const Wrapper = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 auto;
+  padding-top: 50px;
 `;
 
 const Logo = styled.img`

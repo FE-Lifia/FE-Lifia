@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import SearchInput from "./searchInput";
 
 const ul = () => {
   return (
@@ -17,9 +16,6 @@ const ul = () => {
       <Li>
         <StyledLink to={"/login"}>마이페이지</StyledLink>
       </Li>
-      <Li>
-        <SearchInput />
-      </Li>
     </Ul>
   );
 };
@@ -27,13 +23,15 @@ const ul = () => {
 const Ul = styled.ul`
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
   justify-content: space-between;
 `;
 
 const Li = styled.li`
-  margin: 0 10px;
+  margin: 0 40px;
+  padding: 10px 0;
+  @media (max-width: 1280px) {
+    margin: 0 20px;
+  }
 `;
 
 const StyledLink = styled(Link)`
