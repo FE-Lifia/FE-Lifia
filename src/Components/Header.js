@@ -19,6 +19,7 @@ const Header = () => {
     <HeaderContainer>
       <Wrapper>
         <Nav>
+          <Logo src={"../img/mainlogo_color.png"} />
           <Ul>
             <Li>
               <StyledLink to={"/"}>자유게시판</StyledLink>
@@ -53,8 +54,12 @@ const Wrapper = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: space-between;
+  ${"" /* justify-content: space-between; */}
   align-items: center;
+`;
+
+const Logo = styled.img`
+  height: 50px;
 `;
 
 const Ul = styled.ul`
