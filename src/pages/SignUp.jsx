@@ -4,7 +4,7 @@ import ColoredInputBox from "../components/Input_Box/ColoredInputBox";
 import InputBoxwithIcon from "../components/Input_Box/InputBoxWithIcon";
 import UploadFileInputBox from "../components/Input_Box/UploadFileInputBox";
 import Button from "../components/Button/LoginButton";
-import leftlogo from "../assets/leftlogo.png";
+import leftlogo from "../assets/Logo/leftlogo.png";
 
 const SignUp = ({
   onChangeApartment,
