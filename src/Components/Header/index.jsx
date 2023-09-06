@@ -33,7 +33,7 @@ const Wrapper = styled.div`
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 0 70px;
   padding-top: 50px;
 `;
 

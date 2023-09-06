@@ -1,8 +1,12 @@
 import styled from "styled-components";
+import SearchIcon from "./searchIcon";
 
 const searchInput = () => {
   return (
     <SearchWrapper>
+      <IconWrapper>
+        <SearchIcon />
+      </IconWrapper>
       <SearchInputStyle type="text" />
     </SearchWrapper>
   );
@@ -24,12 +28,16 @@ const SearchWrapper = styled.div`
   border: 2px solid #495b87;
   border-radius: 20px;
   padding: 5px;
-  width: 165px;
+  width: 150px;
   height: 40px;
   &:focus {
     outline: none;
     border: 2px solid #3b5eae;
   }
+`;
+
+const IconWrapper = styled.div`
+  margin-left: 10px;
 `;
 
 export default searchInput;
