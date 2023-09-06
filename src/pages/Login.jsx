@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import LoginButton from "../components/Button/LoginButton";
 import InputBox from "../components/Input_Box/InputBox";
+import mainlogo from "../assets/mainlogo.png";
 // 로그인 페이지
 
 const Login = ({
@@ -18,7 +19,7 @@ const Login = ({
   return (
     <>
       <LoginViewLayout style={{ display: "flex", flexDirection: "column" }}>
-        <LogoImage src={"../img/mainlogo.png"} />
+        <LogoImage src={mainlogo} />
         <LoginContainer>
           <InputBoxContainer
             style={{
