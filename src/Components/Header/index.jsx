@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import SearchInput from "./searchInput";
 import Ul from "./ul";
+import mainlogo_color2 from "../../assets/Logo/mainlogo_color2.png";
 
 const header = () => {
   return (
     <HeaderContainer>
       <Wrapper>
         <Nav>
-          <Logo src={"../img/mainlogo_color2.png"} />
+          <Logo src={mainlogo_color2} />
           <Ul />
           <SearchInput />
         </Nav>

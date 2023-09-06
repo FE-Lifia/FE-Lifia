@@ -4,6 +4,7 @@ import ColoredInputBox from "../Input_Box/ColoredInputBox";
 import InputBoxwithIcon from "../Input_Box/InputBoxWithIcon";
 import UploadFileInputBox from "../Input_Box/UploadFileInputBox";
 import Button from "../Button/LoginButton";
+import leftlogo from "../../assets/Logo/leftlogo.png";
 
 const SignUp = ({
   onChangeApartment,
@@ -23,7 +24,7 @@ const SignUp = ({
           <InputBoxContainer
             style={{ display: "flex", flexDirection: "column", gap: "5px" }}
           >
-            <LogoImage src={"../img/leftlogo.png"} />
+            <LogoImage src={leftlogo} />
             <InputBoxwithIcon
               placeholder="아파트명 검색"
               onChange={onChangeApartment}
