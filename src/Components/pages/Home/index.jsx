@@ -1,12 +1,20 @@
 import React from "react";
-import mainpage_img from "../../../assets/mainpage/mainpage_img.svg";
+import styled from "styled-components";
+import MainPageImg from "./mainPageImg";
+import MainNotice from "./mainNotice";
 
 const Home = () => {
   return (
-    <>
-      <img src={mainpage_img} alt="mainpage" />
-    </>
+    <Wrapper>
+      <MainPageImg />
+      <MainNotice />
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  margin: 0;
+  padding: 0;
+`;
 
 export default Home;
