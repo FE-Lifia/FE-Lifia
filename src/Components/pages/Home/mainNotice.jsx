@@ -8,7 +8,9 @@ const MainNotice = () => {
         <BoardItem key={i}>
           <BordNum>{i + 1}</BordNum>
           <BoardCategory>자유게시판</BoardCategory>
-          <BoardItemTitle>층간소음 해결방ㅇㅇㅇㅇㅇ</BoardItemTitle>
+          <BoardItemTitle>
+            층간소음 해결방ㅇㅇㅇㅇㅇdddddddddddddddddd
+          </BoardItemTitle>
         </BoardItem>
       );
     }
@@ -44,18 +46,17 @@ const MainNoticeWrapper = styled.div`
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 220px 0 220px;
+  margin: 0 250px 0 250px;
   background-color: #ffffff;
 `;
 
 const NoticeWrapper = styled.div`
-  width: 100%;
-  padding: 20px;
+  width: 50%;
+  padding: 30px;
 `;
 
 const NoticeTitle = styled.div`
   padding: 10px;
-  border-bottom: 2px solid #3b5eae;
   font-family: "Cafe24 Ssurround", sans-serif;
   font-size: 20px;
   color: #3b5eae;
@@ -72,17 +73,19 @@ const BoardList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  border-top: 2px solid #3b5eae;
+  border-bottom: 2px solid #3b5eae;
 `;
 
 const BoardItem = styled.li`
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   border-bottom: 1px solid #ccc;
 `;
 
 const BordNum = styled.div`
-  padding-right: 60px;
+  padding-right: 10%;
   width: 20px;
   font-size: 14px;
   font-weight: bold;
@@ -100,7 +103,7 @@ const BoardItemTitle = styled.div`
 `;
 
 const BoardCategory = styled.div`
-  padding-right: 60px;
+  padding-right: 10%;
   width: 130px;
   font-size: 14px;
   font-weight: semi-bold;
