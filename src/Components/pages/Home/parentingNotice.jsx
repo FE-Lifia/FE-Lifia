@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ParentingItems from "./parentingItems";
 
 const ParentingNotice = () => {
   return (
@@ -7,10 +8,7 @@ const ParentingNotice = () => {
         <NoticeWrapper>
           <NoticeTitle>함께 육아해요!</NoticeTitle>
           <ParentingList>
-            <ParentingItem />
-            <ParentingItem />
-            <ParentingItem />
-            <ParentingItem />
+            <ParentingItems />
           </ParentingList>
         </NoticeWrapper>
       </Container>
@@ -51,13 +49,6 @@ const ParentingList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-`;
-
-const ParentingItem = styled.article`
-  width: 23%;
-  height: 294px;
-  margin-bottom: 20px;
-  background-color: #eaedfc;
 `;
 
 export default ParentingNotice;
