@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import MainPageImg from "./mainPageImg";
 import MainNotice from "./mainNotice";
+import ParentingNotice from "./parentingNotice";
 
 const Home = () => {
   return (
     <Wrapper>
       <MainPageImg />
       <MainNotice />
+      <ParentingNotice />
     </Wrapper>
   );
 };
