@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import LoginButton from "../components/Button/LoginButton";
-import InputBox from "../components/Input_Box/InputBox";
-import mainlogo from "../assets/Logo/mainlogo.png";
+import LoginButton from "../Button/LoginButton";
+import InputBox from "../Input_Box/InputBox";
+import mainlogo from "../../assets/Logo/mainlogo.png";
 // 로그인 페이지
 
 const Login = ({
