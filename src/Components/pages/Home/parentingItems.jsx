@@ -51,6 +51,9 @@ const ParentingItem = styled.article`
   background-color: #eaedfc;
   position: relative;
   border-radius: 8px;
+  @media screen and (min-width: 1700px) {
+    height: 392px;
+  }
 `;
 
 const StatusContainer = styled.div`
@@ -99,6 +102,9 @@ const InfoTitle = styled.div`
   font-family: "Segoe UI", sans-serif;
   color: #a1a1a1;
   margin-right: 5px;
+  @media screen and (min-width: 1700px) {
+    font-size: 18px;
+  }
 `;
 
 const InfoContent = styled.div`
@@ -107,6 +113,9 @@ const InfoContent = styled.div`
   font-size: 13px;
   font-weight: 300;
   color: #070707;
+  @media screen and (min-width: 1700px) {
+    font-size: 18px;
+  }
 `;
 
 export default ParentingItems;

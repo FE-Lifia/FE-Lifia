@@ -23,7 +23,7 @@ const MainNoticeWrapper = styled.section`
 `;
 
 const Container = styled.div`
-  margin: 0 250px 0 250px;
+  margin: 0 16% 0 16%;
   background-color: #ffffff;
 `;
 
