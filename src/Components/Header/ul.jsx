@@ -27,10 +27,13 @@ const Ul = styled.ul`
 `;
 
 const Li = styled.li`
-  margin: 0 30px;
-  padding: 10px 0;
+  ${"" /* margin: 0 30px; */}
+  padding: 10px 30px 0 30px;
   @media (max-width: 1280px) {
     margin: 0 20px;
+  }
+  @media screen and (min-width: 1700px) {
+    padding: 10px 50px 0 50px;
   }
 `;
 
