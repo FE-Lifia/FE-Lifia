@@ -108,7 +108,10 @@ const InfoTitle = styled.div`
   font-family: "Segoe UI", sans-serif;
   color: #a1a1a1;
   margin-right: 5px;
-  @media screen and (min-width: 1700px) {
+  @media screen and (min-width: 1600px) {
+    font-size: 15px;
+  }
+  @media screen and (min-width: 1800px) {
     font-size: 18px;
   }
 `;
@@ -120,6 +123,9 @@ const InfoContent = styled.div`
   font-weight: 300;
   color: #070707;
   @media screen and (min-width: 1600px) {
+    font-size: 15px;
+  }
+  @media screen and (min-width: 1800px) {
     font-size: 18px;
   }
 `;
