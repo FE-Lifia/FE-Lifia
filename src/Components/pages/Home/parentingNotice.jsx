@@ -29,6 +29,9 @@ const Container = styled.div`
 
 const NoticeWrapper = styled.div`
   padding: 30px;
+  @media screen and (min-width: 1600px) {
+    padding: 50px;
+  }
 `;
 
 const NoticeTitle = styled.div`

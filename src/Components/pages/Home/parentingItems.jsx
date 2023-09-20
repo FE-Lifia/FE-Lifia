@@ -51,7 +51,7 @@ const ParentingItem = styled.article`
   background-color: #eaedfc;
   position: relative;
   border-radius: 8px;
-  @media screen and (min-width: 1700px) {
+  @media screen and (min-width: 1600px) {
     height: 392px;
   }
 `;
@@ -81,12 +81,18 @@ const StatusText = styled.div`
 const ParentingImg = styled.img`
   width: 100%;
   padding: 10px;
+  @media screen and (min-width: 1600px) {
+    padding: 15px;
+  }
 `;
 
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
+  @media screen and (min-width: 1600px) {
+    padding: 15px;
+  }
 `;
 
 const InfoItem = styled.div`
@@ -113,7 +119,7 @@ const InfoContent = styled.div`
   font-size: 13px;
   font-weight: 300;
   color: #070707;
-  @media screen and (min-width: 1700px) {
+  @media screen and (min-width: 1600px) {
     font-size: 18px;
   }
 `;
