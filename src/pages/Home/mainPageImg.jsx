@@ -30,8 +30,8 @@
 
 // export default MainpageImg;
 
-import mainpage_img_1440 from "../../../assets/mainpage/1440/mainpage_img_1440.svg";
-import mainpage_img_1920 from "../../../assets/mainpage/1920/mainpage_img_1920.svg";
+import mainpage_img_1440 from "../../assets/mainpage/1440/mainpage_img_1440.svg";
+import mainpage_img_1920 from "../../assets/mainpage/1920/mainpage_img_1920.svg";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 

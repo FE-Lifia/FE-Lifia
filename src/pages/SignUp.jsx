@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import ColoredInputBox from "../Input_Box/ColoredInputBox";
-import InputBoxwithIcon from "../Input_Box/InputBoxWithIcon";
-import UploadFileInputBox from "../Input_Box/UploadFileInputBox";
-import Button from "../Button/LoginButton";
-import leftlogo from "../../assets/Logo/leftlogo.png";
+import ColoredInputBox from "../components/Input_Box/ColoredInputBox";
+import InputBoxwithIcon from "../components/Input_Box/InputBoxWithIcon";
+import UploadFileInputBox from "../components/Input_Box/UploadFileInputBox";
+import Button from "../components/Button/LoginButton";
+import leftlogo from "../assets/Logo/leftlogo.png";
 
 const SignUp = ({
   onChangeApartment,

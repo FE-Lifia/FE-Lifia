@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import kids_cafe1 from "../../../assets/mainpage/1440/kids_cafe1.png";
+import kids_cafe1 from "../../assets/mainpage/1440/kids_cafe1.png";
 
 const ParentingItems = () => {
   return (
