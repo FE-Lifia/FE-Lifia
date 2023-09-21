@@ -28,7 +28,7 @@ const Header = () => {
           <SearchInput />
         </Nav>
       </Wrapper>
-      <DropdownMenu props={isDropdownOpen} />
+      <DropdownMenu />
     </HeaderContainer>
   );
 };

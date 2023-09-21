@@ -1,22 +1,18 @@
 import styled from "styled-components";
 
-const DropdownMenu = (props) => {
+const DropdownMenu = () => {
   return (
-    <>
-      {props.isDropdownOpen && (
-        <DropdownMenuContainer>
-          <DropdownMenuUl>
-            <DropdownMenuLi>Menu Item 1</DropdownMenuLi>
-            <DropdownMenuLi>Menu Item 2</DropdownMenuLi>
-            <DropdownMenuLi>Menu Item 3</DropdownMenuLi>
-          </DropdownMenuUl>
-        </DropdownMenuContainer>
-      )}
-    </>
+    <DropdownMenuContainer>
+      <DropdownMenuUl>
+        <DropdownMenuLi>Menu Item 1</DropdownMenuLi>
+        <DropdownMenuLi>Menu Item 2</DropdownMenuLi>
+        <DropdownMenuLi>Menu Item 3</DropdownMenuLi>
+      </DropdownMenuUl>
+    </DropdownMenuContainer>
   );
 };
 
-const DropdownMenuContainer = styled.ul`
+const DropdownMenuContainer = styled.div`
   position: absolute;
   width: 100%;
   display: flex;
@@ -24,6 +20,11 @@ const DropdownMenuContainer = styled.ul`
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #ccc;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  &.open {
+    transform: translateY(0);
+  }
 `;
 
 const DropdownMenuUl = styled.ul`
