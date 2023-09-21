@@ -1,15 +1,21 @@
 import styled from "styled-components";
 import footer_logo from "../../assets/Logo/footer_logo.png";
+import LinkTextGroup from "./linkTextGroup";
+import CompanyInfoGroup from "./companyInfoGroup";
 
 const footer = () => {
   return (
-    <FooterContainer>
+    <FooterWrapper>
       <Logo src={footer_logo} alt="logo" />
-    </FooterContainer>
+      <FooterTextContainer>
+        <LinkTextGroup />
+        <CompanyInfoGroup />
+      </FooterTextContainer>
+    </FooterWrapper>
   );
 };
 
-const FooterContainer = styled.footer`
+const FooterWrapper = styled.footer`
   height: 187px;
   background-color: #707070;
   display: flex;
@@ -17,9 +23,10 @@ const FooterContainer = styled.footer`
   align-items: center;
 `;
 
-const Logo = styled.img`
-  width: 200px;
-  height: 50px;
+const FooterTextContainer = styled.div`
+  display: block;
 `;
+
+const Logo = styled.img``;
 
 export default footer;
