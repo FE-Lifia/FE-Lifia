@@ -42,8 +42,6 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 25px;
   font-family: "Cafe24 Ssurround", sans-serif;
-  font-weight: bold;
-  /* @font-face 규칙을 사용하여 Cafe24 Ssurround 폰트를 로드합니다. */
   @font-face {
     font-family: "Cafe24 Ssurround";
     src: url("/fonts/Cafe24Ssurround.ttf") format("truetype");
