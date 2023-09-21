@@ -3,7 +3,7 @@ import styled from "styled-components";
 const LinkTextGroup = () => {
   return (
     <LinkTextContainer>
-      <LinkText href="#" first>
+      <LinkText href="#" first="true">
         회사 소개
       </LinkText>
       <FooterBar />
