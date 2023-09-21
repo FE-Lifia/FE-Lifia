@@ -52,6 +52,9 @@ const ParentingItem = styled.article`
   position: relative;
   border-radius: 8px;
   @media screen and (min-width: 1600px) {
+    height: 340px;
+  }
+  @media screen and (min-width: 1800px) {
     height: 392px;
   }
 `;
@@ -59,6 +62,9 @@ const ParentingItem = styled.article`
 const StatusContainer = styled.div`
   position: absolute;
   top: 10px;
+  @media screen and (min-width: 1600px) {
+    top: 15px;
+  }
   width: 76px;
   height: 30px;
   background-color: #4061b7;
