@@ -1,56 +1,56 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import SearchInput from "./searchInput";
-import Ul from "./ul";
+import Nav from "./nav";
 import mainlogo_color2 from "../../assets/Logo/mainlogo_color2.png";
-import DropdownMenu from "./dropdownMenu";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleMouseEnter = () => {
-    setIsDropdownOpen(true);
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   const handleMouseLeave = () => {
-    setIsDropdownOpen(false);
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
-    <HeaderContainer
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <Wrapper>
-        <Nav>
-          <Logo src={mainlogo_color2} />
-          <Ul />
+    <HeaderContainer>
+      <Wrapper1>
+        <Wrapper2
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <LogoWrapper>
+            <Logo src={mainlogo_color2} />
+          </LogoWrapper>
+          <Nav isDropdownOpen={isDropdownOpen} />
           <SearchInput />
-        </Nav>
-      </Wrapper>
-      <DropdownMenu />
+        </Wrapper2>
+      </Wrapper1>
+      {/* <DropdownMenu /> */}
     </HeaderContainer>
   );
 };
 
 const HeaderContainer = styled.header`
-  background-color: ##ffffff;
-  color: #fff;
-  text-align: center;
-  height: 115px;
+  background-color: #ffffff;
 `;
 
-const Wrapper = styled.div`
-  margin: 0 8%;
+const Wrapper1 = styled.div`
+  margin: 0 12%;
   height: 100%;
 `;
 
-const Nav = styled.nav`
+const Wrapper2 = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 70px;
-  padding-top: 50px;
+  align-items: center;
+  height: 91px;
 `;
+
+const LogoWrapper = styled.div``;
 
 const Logo = styled.img`
   height: 50px;
