@@ -11,90 +11,96 @@ const Nav = ({ isDropdownOpen }) => {
           </Li>
           <Li>
             <StyledLink to={"/login"}>같이해요</StyledLink>
-            <Container1>
-              <Container2>
-                <SubUl>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>공구해요</SubSpan>
-                    </SubA>
-                  </SubLi>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>배달해요</SubSpan>
-                    </SubA>
-                  </SubLi>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>조심해요</SubSpan>
-                    </SubA>
-                  </SubLi>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>투표해요</SubSpan>
-                    </SubA>
-                  </SubLi>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>육아해요</SubSpan>
-                    </SubA>
-                  </SubLi>
-                </SubUl>
-              </Container2>
-            </Container1>
+            {isDropdownOpen && (
+              <Container1>
+                <Container2>
+                  <SubUl>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>공구해요</SubSpan>
+                      </SubA>
+                    </SubLi>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>배달해요</SubSpan>
+                      </SubA>
+                    </SubLi>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>조심해요</SubSpan>
+                      </SubA>
+                    </SubLi>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>투표해요</SubSpan>
+                      </SubA>
+                    </SubLi>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>육아해요</SubSpan>
+                      </SubA>
+                    </SubLi>
+                  </SubUl>
+                </Container2>
+              </Container1>
+            )}
           </Li>
           <Li>
             <StyledLink to={"/"}>고객센터</StyledLink>
-            <Container1>
-              <Container2>
-                <SubUl>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>공지사항</SubSpan>
-                    </SubA>
-                  </SubLi>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>자주묻는질문</SubSpan>
-                    </SubA>
-                  </SubLi>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>유저신고</SubSpan>
-                    </SubA>
-                  </SubLi>
-                </SubUl>
-              </Container2>
-            </Container1>
+            {isDropdownOpen && (
+              <Container1>
+                <Container2>
+                  <SubUl>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>공지사항</SubSpan>
+                      </SubA>
+                    </SubLi>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>자주묻는질문</SubSpan>
+                      </SubA>
+                    </SubLi>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>유저신고</SubSpan>
+                      </SubA>
+                    </SubLi>
+                  </SubUl>
+                </Container2>
+              </Container1>
+            )}
           </Li>
           <Li>
             <StyledLink to={"/login"}>마이페이지</StyledLink>
-            <Container1>
-              <Container2>
-                <SubUl>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>내가쓴글</SubSpan>
-                    </SubA>
-                  </SubLi>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>댓글단글</SubSpan>
-                    </SubA>
-                  </SubLi>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>좋아요</SubSpan>
-                    </SubA>
-                  </SubLi>
-                  <SubLi>
-                    <SubA>
-                      <SubSpan>설정</SubSpan>
-                    </SubA>
-                  </SubLi>
-                </SubUl>
-              </Container2>
-            </Container1>
+            {isDropdownOpen && (
+              <Container1>
+                <Container2>
+                  <SubUl>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>내가쓴글</SubSpan>
+                      </SubA>
+                    </SubLi>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>댓글단글</SubSpan>
+                      </SubA>
+                    </SubLi>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>좋아요</SubSpan>
+                      </SubA>
+                    </SubLi>
+                    <SubLi>
+                      <SubA>
+                        <SubSpan>설정</SubSpan>
+                      </SubA>
+                    </SubLi>
+                  </SubUl>
+                </Container2>
+              </Container1>
+            )}
           </Li>
         </Ul>
         {isDropdownOpen && <DropdownBackground />}
@@ -121,15 +127,15 @@ const Ul = styled.ul`
 `;
 
 const DropdownBackground = styled.div`
-  height: 200px;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.9);
   top: 91px;
   left: 0;
   z-index: 95;
+  height: 200px;
   width: 100%;
-  transition: height 0.3s ease-in-out;
 `;
+
 const Li = styled.li`
   @media (max-width: 1280px) {
     margin: 0 20px;
