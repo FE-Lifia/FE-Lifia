@@ -97,9 +97,7 @@ const Nav = ({ isDropdownOpen }) => {
             </Container1>
           </Li>
         </Ul>
-        {isDropdownOpen && (
-          <DropdownBackground isDropdownOpen={isDropdownOpen} />
-        )}
+        {isDropdownOpen && <DropdownBackground />}
       </NavContainer2>
     </NavContainer1>
   );
@@ -122,11 +120,8 @@ const Ul = styled.ul`
   height: 100%;
 `;
 
-const DropdownBackground = styled.div.attrs((isDropdownOpen) => ({
-  style: {
-    height: isDropdownOpen ? "200px" : "0",
-  },
-}))`
+const DropdownBackground = styled.div`
+  height: 200px;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.9);
   top: 91px;
