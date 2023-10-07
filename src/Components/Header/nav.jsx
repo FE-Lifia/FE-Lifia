@@ -1,111 +1,113 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { StyleSheetManager } from "styled-components";
 
 const Nav = ({ isDropdownOpen }) => {
   return (
-    <NavContainer1>
-      <NavContainer2>
-        <Ul>
-          <Li>
-            <StyledLink to={"/"}>자유게시판</StyledLink>
-          </Li>
-          <Li>
-            <StyledLink to={"/login"}>같이해요</StyledLink>
-            {isDropdownOpen && (
-              <Container1>
-                <Container2>
-                  <SubUl>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>공구해요</SubSpan>
-                      </SubA>
-                    </SubLi>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>배달해요</SubSpan>
-                      </SubA>
-                    </SubLi>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>조심해요</SubSpan>
-                      </SubA>
-                    </SubLi>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>투표해요</SubSpan>
-                      </SubA>
-                    </SubLi>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>육아해요</SubSpan>
-                      </SubA>
-                    </SubLi>
-                  </SubUl>
-                </Container2>
-              </Container1>
-            )}
-          </Li>
-          <Li>
-            <StyledLink to={"/"}>고객센터</StyledLink>
-            {isDropdownOpen && (
-              <Container1>
-                <Container2>
-                  <SubUl>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>공지사항</SubSpan>
-                      </SubA>
-                    </SubLi>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>자주묻는질문</SubSpan>
-                      </SubA>
-                    </SubLi>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>유저신고</SubSpan>
-                      </SubA>
-                    </SubLi>
-                  </SubUl>
-                </Container2>
-              </Container1>
-            )}
-          </Li>
-          <Li>
-            <StyledLink to={"/login"}>마이페이지</StyledLink>
-            {isDropdownOpen && (
-              <Container1>
-                <Container2>
-                  <SubUl>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>내가쓴글</SubSpan>
-                      </SubA>
-                    </SubLi>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>댓글단글</SubSpan>
-                      </SubA>
-                    </SubLi>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>좋아요</SubSpan>
-                      </SubA>
-                    </SubLi>
-                    <SubLi>
-                      <SubA>
-                        <SubSpan>설정</SubSpan>
-                      </SubA>
-                    </SubLi>
-                  </SubUl>
-                </Container2>
-              </Container1>
-            )}
-          </Li>
-        </Ul>
-        {isDropdownOpen && <DropdownBackground />}
-      </NavContainer2>
-    </NavContainer1>
+    <StyleSheetManager shouldForwardProp={(prop) => prop !== "first"}>
+      <NavContainer1>
+        <NavContainer2>
+          <Ul>
+            <Li>
+              <StyledLink to={"/"}>자유게시판</StyledLink>
+            </Li>
+            <Li>
+              <StyledLink to={"/login"}>같이해요</StyledLink>
+              {isDropdownOpen && (
+                <Container1>
+                  <Container2>
+                    <SubUl>
+                      <SubLi>
+                        <SubA first="true">
+                          <SubSpan>공구해요</SubSpan>
+                        </SubA>
+                      </SubLi>
+                      <SubLi>
+                        <SubA>
+                          <SubSpan>배달해요</SubSpan>
+                        </SubA>
+                      </SubLi>
+                      <SubLi>
+                        <SubA>
+                          <SubSpan>조심해요</SubSpan>
+                        </SubA>
+                      </SubLi>
+                      <SubLi>
+                        <SubA>
+                          <SubSpan>투표해요</SubSpan>
+                        </SubA>
+                      </SubLi>
+                      <SubLi>
+                        <SubA>
+                          <SubSpan>육아해요</SubSpan>
+                        </SubA>
+                      </SubLi>
+                    </SubUl>
+                  </Container2>
+                </Container1>
+              )}
+            </Li>
+            <Li>
+              <StyledLink to={"/"}>고객센터</StyledLink>
+              {isDropdownOpen && (
+                <Container1>
+                  <Container2>
+                    <SubUl>
+                      <SubLi>
+                        <SubA first="true">
+                          <SubSpan>공지사항</SubSpan>
+                        </SubA>
+                      </SubLi>
+                      <SubLi>
+                        <SubA>
+                          <SubSpan>자주묻는질문</SubSpan>
+                        </SubA>
+                      </SubLi>
+                      <SubLi>
+                        <SubA>
+                          <SubSpan>유저신고</SubSpan>
+                        </SubA>
+                      </SubLi>
+                    </SubUl>
+                  </Container2>
+                </Container1>
+              )}
+            </Li>
+            <Li>
+              <StyledLink to={"/login"}>마이페이지</StyledLink>
+              {isDropdownOpen && (
+                <Container1>
+                  <Container2>
+                    <SubUl>
+                      <SubLi>
+                        <SubA first="true">
+                          <SubSpan>내가쓴글</SubSpan>
+                        </SubA>
+                      </SubLi>
+                      <SubLi>
+                        <SubA>
+                          <SubSpan>댓글단글</SubSpan>
+                        </SubA>
+                      </SubLi>
+                      <SubLi>
+                        <SubA>
+                          <SubSpan>좋아요</SubSpan>
+                        </SubA>
+                      </SubLi>
+                      <SubLi>
+                        <SubA>
+                          <SubSpan>설정</SubSpan>
+                        </SubA>
+                      </SubLi>
+                    </SubUl>
+                  </Container2>
+                </Container1>
+              )}
+            </Li>
+          </Ul>
+          {isDropdownOpen && <DropdownBackground />}
+        </NavContainer2>
+      </NavContainer1>
+    </StyleSheetManager>
   );
 };
 
@@ -183,13 +185,14 @@ const SubLi = styled.li`
 `;
 
 const SubSpan = styled.span`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 28px;
 `;
 
 const SubA = styled.a`
   display: block;
+  ${({ first }) => first && "margin-top: 10px;"}
   padding: 5px 0;
   text-align: center;
   font-size: 18px;
