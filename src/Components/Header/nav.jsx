@@ -145,6 +145,9 @@ const Li = styled.li`
   @media screen and (min-width: 1700px) {
     padding: 0 50px 0 50px;
   }
+  @media screen and (min-width: 1900px) {
+    padding: 0 30px 0 30px;
+  }
 `;
 
 const StyledLink = styled(Link)`
