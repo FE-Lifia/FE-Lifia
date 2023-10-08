@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import ColoredInputBox from "../components/Input Box/ColoredInputBox";
-import InputBoxwithIcon from "../components/Input Box/InputBoxWithIcon";
-import UploadFileInputBox from "../components/Input Box/UploadFileInputBox";
-import Button from "../components/Button/LoginButton";
+import ColoredInputBox from "../../components/Input Box/ColoredInputBox";
+import InputBoxwithIcon from "../../components/Input Box/InputBoxWithIcon";
+import Button from "../../components/Button/LoginButton";
 
-const SignUp = ({ onChangeApartment, onChangeIDcardnumber, onChangeID, onChangePassword, onChangeEmail, onClickSignupButton, onChangeRealname, onChangeNickname }) => {
+const SignUpView = ({ onChangeApartment, onChangePassword, onChangeEmail, onClickSignupButton, onChangeRealname, onChangeNickname }) => {
+  
   return (
       <>
           <SignupViewLayout  style={{ display: "flex", flexDirection: "column" }}>
@@ -15,7 +15,6 @@ const SignUp = ({ onChangeApartment, onChangeIDcardnumber, onChangeID, onChangeP
                   <InputBoxContainer style={{ display: "flex", flexDirection: "column", gap: "5px"}}>
                   <LogoImage src={"../img/leftlogo.png"} />
                       <InputBoxwithIcon placeholder="아파트명 검색" onChange={onChangeApartment} />
-                      <UploadFileInputBox placeholder="주민등록증 사진" onChange={onChangeIDcardnumber} />
 
                       <Title2 style={{ fontSize: "0.3rem" }}>
                           {" "}
@@ -25,13 +24,11 @@ const SignUp = ({ onChangeApartment, onChangeIDcardnumber, onChangeID, onChangeP
 
                   {/* 비번 입력 */}
                   <InputBoxContainer style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-                      <ColoredInputBox placeholder="ID" onChange={onChangeID} />
-                      <ColoredInputBox placeholder="PASSWORD" onChange={onChangePassword} type="password" />
                       <ColoredInputBox placeholder="EMAIL" onChange={onChangeEmail}  />
+                      <ColoredInputBox placeholder="PASSWORD" onChange={onChangePassword} type="password" />
                   </InputBoxContainer>
 
                   {/* 3번째 */}
-
                   <InputBoxContainer style={{ display: "flex", flexDirection: "column", gap: "5px"}}>
                       <ColoredInputBox placeholder="이름 (성명)" onChange={onChangeRealname} /> 
                       <ColoredInputBox placeholder="닉네임" onChange={onChangeNickname} />
@@ -97,4 +94,5 @@ const LogoImage = styled.img`
   width: 50%;
   margin-right: auto;
 `;
-export default SignUp;
+
+export default SignUpView;

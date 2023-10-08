@@ -24,7 +24,7 @@ const ColoredInputBox = ({ placeholder, onChange, background = "#FAFAFA", type =
                 borderRadius: "10px",
                 fontSize: "15px",
                 background: "linear-gradient(to right, #8FC7EA, #94C4E9, #99C1E8, #9CBEE8, #9FBCEA)",
-                color: "#B6B6B6",
+                color: "black",
             }}
         />
     );
