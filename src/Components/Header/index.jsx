@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SearchInput from "./searchInput";
 import Nav from "./nav";
@@ -22,7 +23,7 @@ const Header = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <LogoWrapper>
+          <LogoWrapper to={"/"}>
             <Logo src={mainlogo_color2} />
           </LogoWrapper>
           <Nav isDropdownOpen={isDropdownOpen} />
@@ -50,7 +51,7 @@ const Wrapper2 = styled.div`
   height: 91px;
 `;
 
-const LogoWrapper = styled.div``;
+const LogoWrapper = styled(Link)``;
 
 const Logo = styled.img`
   height: 50px;
