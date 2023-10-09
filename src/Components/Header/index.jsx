@@ -23,7 +23,7 @@ const Header = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <LogoWrapper to={"/"}>
+          <LogoWrapper to={"/main"}>
             <Logo src={mainlogo_color2} />
           </LogoWrapper>
           <Nav isDropdownOpen={isDropdownOpen} />
