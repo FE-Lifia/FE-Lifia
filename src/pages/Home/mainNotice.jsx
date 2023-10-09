@@ -63,7 +63,6 @@ const NoticeTitle = styled.div`
   font-family: "Cafe24 Ssurround", sans-serif;
   font-size: 20px;
   color: #3b5eae;
-  font-weight: bold;
   /* @font-face 규칙을 사용하여 Cafe24 Ssurround 폰트를 로드합니다. */
   @font-face {
     font-family: "Cafe24 Ssurround";
@@ -98,6 +97,7 @@ const BordNum = styled.div`
 
 const BoardItemTitle = styled.div`
   font-size: 14px;
+  font-family: "Segoe UI", sans-serif;
   color: #070707;
   font-weight: 400;
   white-space: nowrap;
@@ -109,7 +109,7 @@ const BoardCategory = styled.div`
   padding-right: 10%;
   width: 130px;
   font-size: 14px;
-  font-weight: semi-bold;
+  font-family: "Segoe UI", sans-serif;
   color: #b7b7b8;
 `;
 

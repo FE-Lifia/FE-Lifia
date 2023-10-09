@@ -35,13 +35,6 @@ const ParentingItems = () => {
   );
 };
 
-// const ParentingItem = styled.article`
-//   width: 23%;
-//   height: 294px;
-//   margin-bottom: 20px;
-//   background-color: #eaedfc;
-// `;
-
 const ParentingItem = styled.article`
   display: flex;
   flex-direction: column;
@@ -77,11 +70,7 @@ const StatusContainer = styled.div`
 const StatusText = styled.div`
   font-size: 13px;
   color: #ffffff;
-  @font-face {
-    font-family: "Cafe24 Ssurround";
-    src: url("/fonts/Cafe24Ssurround.ttf") format("truetype");
-    font-style: normal;
-  }
+  font-family: "Segoe UI", sans-serif;
 `;
 
 const ParentingImg = styled.img`
