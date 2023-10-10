@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ComentContainer from "./ComentContainer";
 
 const MainContent = () => {
   return (
@@ -32,6 +33,7 @@ const MainContent = () => {
           <LikeButton>좋아요 4</LikeButton>
         </LikeWrapper>
       </Wrapper2>
+      <ComentContainer />
     </>
   );
 };
