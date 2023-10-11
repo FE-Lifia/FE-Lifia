@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import SecondContainer from "./SecondContainer";
 
 const ComentContainer = () => {
   return (
@@ -9,23 +10,43 @@ const ComentContainer = () => {
       </TotalComentWrapper>
       <ComentWrapper>
         <ComentName>바다</ComentName>
-        <ComentText>댓글입니다.</ComentText>
+        <ComentText>어 저도 그거 궁금했어요</ComentText>
         <RightBoxWrapper>
           <RightBox>
             <ReplyNotifyWrapper>
               <ReplyWrapper>
-                <Reply>답글</Reply>
+                <Reply>대댓글</Reply>
               </ReplyWrapper>
               <NotifyWrapper>
                 <Notify>신고</Notify>
               </NotifyWrapper>
             </ReplyNotifyWrapper>
             <TimeWrapper>
-              <TimeText>2021.06.11</TimeText>
+              <TimeText>2023-08-10 01:38</TimeText>
             </TimeWrapper>
           </RightBox>
         </RightBoxWrapper>
       </ComentWrapper>
+      <ComentWrapper>
+        <ComentName>포로리</ComentName>
+        <ComentText>아 그거 별거 아니래요!</ComentText>
+        <RightBoxWrapper>
+          <RightBox>
+            <ReplyNotifyWrapper>
+              <ReplyWrapper>
+                <Reply>대댓글</Reply>
+              </ReplyWrapper>
+              <NotifyWrapper>
+                <Notify>신고</Notify>
+              </NotifyWrapper>
+            </ReplyNotifyWrapper>
+            <TimeWrapper>
+              <TimeText>2023-08-10 01:38</TimeText>
+            </TimeWrapper>
+          </RightBox>
+        </RightBoxWrapper>
+      </ComentWrapper>
+      <SecondContainer />
     </Wrapper>
   );
 };
@@ -58,6 +79,7 @@ const ComentName = styled.div`
   font-family: "Segoe UI", sans-serif;
   display: flex;
   align-items: center;
+  width: 15%;
 `;
 
 const ComentText = styled.div`
@@ -66,17 +88,22 @@ const ComentText = styled.div`
   font-family: "Segoe UI", sans-serif;
   display: flex;
   align-items: center;
+  width: 60%;
 `;
 
 const RightBoxWrapper = styled.div`
   display: flex;
   align-items: center;
+  width: 13%;
 `;
 
-const RightBox = styled.div``;
+const RightBox = styled.div`
+  width: 100%;
+`;
 
 const ReplyNotifyWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 
 const ReplyWrapper = styled.div``;
@@ -95,7 +122,10 @@ const Notify = styled.div`
   font-family: "Segoe UI", sans-serif;
 `;
 
-const TimeWrapper = styled.div``;
+const TimeWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const TimeText = styled.div`
   color: #7b7c7d;
