@@ -55,6 +55,7 @@ const SecondContainerText = styled.div`
   font-family: "Segoe UI", sans-serif;
   display: flex;
   align-items: center;
+  width: 50%;
 `;
 
 const RightBoxWrapper = styled.div`
