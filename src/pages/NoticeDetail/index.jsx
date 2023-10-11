@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Bord from "./Bord";
 import MainContainer from "./MainContainer";
+import ComentInputContainer from "./ComentInputContainer";
 
 const NoticeDetail = () => {
   return (
@@ -9,6 +10,7 @@ const NoticeDetail = () => {
       <Container>
         <Bord />
         <MainContainer />
+        <ComentInputContainer />
       </Container>
     </Wrapper>
   );
@@ -22,6 +24,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   margin: 0 12%;
+  padding: 20px 0;
 `;
 
 export default NoticeDetail;
