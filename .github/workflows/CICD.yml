@@ -12,7 +12,7 @@ jobs:
         with:
           ref: "notice-detail"
       - run: npm ci
-      - run: echo ${{ github.workspace }}
+      - run: npm run build
       - name: deploy to s3
         uses: jakejarvis/s3-sync-action@master
         with:
