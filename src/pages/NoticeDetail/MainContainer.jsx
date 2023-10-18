@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import MainContent from "./MainContent";
 
-const MainContainer = () => {
+const MainContainer = ({ coments }) => {
   return (
     <Wrapper>
       <Container>
-        <MainContent />
+        <MainContent coments={coments} />
       </Container>
     </Wrapper>
   );

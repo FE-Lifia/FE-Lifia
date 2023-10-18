@@ -1,7 +1,21 @@
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, { css, keyframes } from "styled-components";
 import ComentContainer from "./ComentContainer";
 
-const MainContent = () => {
+const MainContent = ({ coments }) => {
+  const [liked, setLiked] = useState(false);
+  const [count, setCount] = useState(0);
+
+  const handleLikeButtonClick = () => {
+    if (liked) {
+      setLiked(false);
+      setCount(count - 1);
+    } else {
+      setLiked(true);
+      setCount(count + 1);
+    }
+  };
+
   return (
     <>
       <ContentTitle>
@@ -32,8 +46,13 @@ const MainContent = () => {
         <LikeWrapper>
           <LikeButton>좋아요 4</LikeButton>
         </LikeWrapper>
+        <VeryLikeWrapper>
+          <VeryLikeButton liked={liked} onClick={handleLikeButtonClick}>
+            {liked ? "취소" : "좋아요"} {count}
+          </VeryLikeButton>
+        </VeryLikeWrapper>
       </Wrapper2>
-      <ComentContainer />
+      <ComentContainer coments={coments} />
     </>
   );
 };
@@ -131,6 +150,39 @@ const LikeButton = styled.button`
   color: #ffffff;
   font-size: 21px;
   font-family: "Segoe UI", sans-serif;
+`;
+
+const pulse = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
+const VeryLikeButton = styled.button`
+  width: 157px;
+  height: 59px;
+  background-color: ${({ liked }) => (liked ? "#ff6b6b" : "#adb0b7")};
+  border-radius: 11px;
+  color: #ffffff;
+  font-size: 21px;
+  font-family: "Segoe UI", sans-serif;
+  animation: ${({ liked }) =>
+    liked &&
+    css`
+      ${pulse} 0.5s linear
+    `};
+`;
+
+const VeryLikeWrapper = styled.div`
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
 `;
 
 export default MainContent;

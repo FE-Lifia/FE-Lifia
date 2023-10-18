@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Bord from "./Bord";
 import MainContainer from "./MainContainer";
@@ -6,13 +6,43 @@ import ComentInputContainer from "./ComentInputContainer";
 import NavBar from "../../components/NavBar";
 
 const NoticeDetail = () => {
+  const [inputText, setInputText] = useState("");
+  const [coments, setComents] = useState([
+    {
+      id: 1,
+      name: "바다",
+      text: "어 저도 그거 궁금했어요",
+      time: "2023-08-10 01:38",
+    },
+    {
+      id: 2,
+      name: "포로리",
+      text: "아 그거 별거 아니래요!",
+      time: "2023-08-10 01:38",
+    },
+  ]);
+
+  const handleAddComent = (inputText, userId) => {
+    const newComent = {
+      id: coments.length + 1,
+      name: userId,
+      text: inputText,
+      time: new Date().toLocaleString(),
+    };
+    setComents([...coments, newComent]);
+  };
+
   return (
     <Wrapper>
       <Container>
         <Container2>
           <Bord />
-          <MainContainer />
-          <ComentInputContainer />
+          <MainContainer inputText={inputText} coments={coments} />
+          <ComentInputContainer
+            inputText={inputText}
+            setInputText={setInputText}
+            handleAddComent={handleAddComent}
+          />
         </Container2>
         <NavContainer>
           <NavBar />

@@ -1,51 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import SecondContainer from "./SecondContainer";
 
-const ComentContainer = () => {
+const ComentContainer = ({ coments }) => {
   return (
     <Wrapper>
       <TotalComentWrapper>
         <TotalComent>댓글 2개</TotalComent>
       </TotalComentWrapper>
-      <ComentWrapper>
-        <ComentName>바다</ComentName>
-        <ComentText>어 저도 그거 궁금했어요</ComentText>
-        <RightBoxWrapper>
-          <RightBox>
-            <ReplyNotifyWrapper>
-              <ReplyWrapper>
-                <Reply>대댓글</Reply>
-              </ReplyWrapper>
-              <NotifyWrapper>
-                <Notify>신고</Notify>
-              </NotifyWrapper>
-            </ReplyNotifyWrapper>
-            <TimeWrapper>
-              <TimeText>2023-08-10 01:38</TimeText>
-            </TimeWrapper>
-          </RightBox>
-        </RightBoxWrapper>
-      </ComentWrapper>
-      <ComentWrapper>
-        <ComentName>포로리</ComentName>
-        <ComentText>아 그거 별거 아니래요!</ComentText>
-        <RightBoxWrapper>
-          <RightBox>
-            <ReplyNotifyWrapper>
-              <ReplyWrapper>
-                <Reply>대댓글</Reply>
-              </ReplyWrapper>
-              <NotifyWrapper>
-                <Notify>신고</Notify>
-              </NotifyWrapper>
-            </ReplyNotifyWrapper>
-            <TimeWrapper>
-              <TimeText>2023-08-10 01:38</TimeText>
-            </TimeWrapper>
-          </RightBox>
-        </RightBoxWrapper>
-      </ComentWrapper>
+      {coments.map((coment) => (
+        <ComentWrapper key={coment.id}>
+          <ComentName>{coment.name}</ComentName>
+          <ComentText>{coment.text}</ComentText>
+          <RightBoxWrapper>
+            <RightBox>
+              <ReplyNotifyWrapper>
+                <ReplyWrapper>
+                  <Reply>대댓글</Reply>
+                </ReplyWrapper>
+                <NotifyWrapper>
+                  <Notify>신고</Notify>
+                </NotifyWrapper>
+              </ReplyNotifyWrapper>
+              <TimeWrapper>
+                <TimeText>{coment.time}</TimeText>
+              </TimeWrapper>
+            </RightBox>
+          </RightBoxWrapper>
+        </ComentWrapper>
+      ))}
       <SecondContainer />
     </Wrapper>
   );
@@ -103,10 +86,11 @@ const RightBox = styled.div`
 
 const ReplyNotifyWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
 `;
 
-const ReplyWrapper = styled.div``;
+const ReplyWrapper = styled.div`
+  width: 50%;
+`;
 
 const Reply = styled.div`
   color: #545454;
@@ -114,7 +98,9 @@ const Reply = styled.div`
   font-family: "Segoe UI", sans-serif;
 `;
 
-const NotifyWrapper = styled.div``;
+const NotifyWrapper = styled.div`
+  width: 50%;
+`;
 
 const Notify = styled.div`
   color: #545454;
@@ -122,10 +108,7 @@ const Notify = styled.div`
   font-family: "Segoe UI", sans-serif;
 `;
 
-const TimeWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
+const TimeWrapper = styled.div``;
 
 const TimeText = styled.div`
   color: #7b7c7d;

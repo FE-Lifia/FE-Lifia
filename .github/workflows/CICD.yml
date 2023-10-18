@@ -1,0 +1,13 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - notice-detail
+  workflow_dispatch:
+
+jobs:
+  cicd:
+    runs-on: ubuntu-latest
+    steps:
+      -run: echo "Hello World"

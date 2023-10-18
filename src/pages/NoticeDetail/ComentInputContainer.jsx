@@ -2,13 +2,27 @@ import React from "react";
 import styled from "styled-components";
 import commentButton from "../../assets/Comment_Button/paper-plane.png";
 
-const ComentInputContainer = () => {
+const ComentInputContainer = ({ inputText, setInputText, handleAddComent }) => {
+  const handleInputText = (event) => {
+    const { value } = event.target;
+    setInputText(value);
+  };
+
+  const handleButtonClick = () => {
+    handleAddComent(inputText, "보노보노");
+    setInputText("");
+  };
+
   return (
     <Wrapper>
       <InputWrapper>
-        <Input placeholder="댓글을 입력하세요."></Input>
+        <Input
+          placeholder="댓글을 입력하세요."
+          value={inputText}
+          onChange={handleInputText}
+        ></Input>
         <ButtonWrapper>
-          <ButtonBox>
+          <ButtonBox onClick={handleButtonClick}>
             <Button />
           </ButtonBox>
         </ButtonWrapper>
@@ -44,7 +58,7 @@ const Input = styled.input`
 
 const ButtonWrapper = styled.div``;
 
-const ButtonBox = styled.div`
+const ButtonBox = styled.button`
   width: 85px;
   height: 85px;
   background-color: #477b9a;
@@ -53,7 +67,7 @@ const ButtonBox = styled.div`
   align-items: center;
 `;
 
-const Button = styled.button`
+const Button = styled.div`
   background-image: url(${commentButton});
   background-repeat: no-repeat;
   background-size: contain;
