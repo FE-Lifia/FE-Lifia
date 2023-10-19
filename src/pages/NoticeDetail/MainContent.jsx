@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import ComentContainer from "./ComentContainer";
+import NotifyBox from "./NotifyBox";
 
 const MainContent = ({ coments }) => {
   const [liked, setLiked] = useState(false);
   const [count, setCount] = useState(0);
+  const [showWindow, setShowWindow] = useState(false);
 
   const handleLikeButtonClick = () => {
     if (liked) {
@@ -14,6 +16,10 @@ const MainContent = ({ coments }) => {
       setLiked(true);
       setCount(count + 1);
     }
+  };
+
+  const showNotifyWindow = () => {
+    setShowWindow(!showWindow);
   };
 
   return (
@@ -30,10 +36,11 @@ const MainContent = ({ coments }) => {
           </NameTimeWrapper>
         </ProfileWrapper>
         <NotifyWrapper>
-          <Notify>! 신고</Notify>
+          <Notify onClick={showNotifyWindow}>! 신고</Notify>
         </NotifyWrapper>
       </Wrapper1>
       <Wrapper2>
+        {showWindow && <NotifyBox setShowWindow={setShowWindow} />}
         <ContentTextWrapper>
           <ContentText>
             구급차도 여러대 오고 사람들도 몰려있었는데 무슨 일인지 아시는 분
@@ -107,17 +114,17 @@ const NotifyWrapper = styled.div`
   flex-direction: column-reverse;
 `;
 
-const Notify = styled.div`
+const Notify = styled.button`
   color: #7b7c7d;
   font-size: 21px;
   font-family: "Segoe UI", sans-serif;
 `;
 
-const Wrapper2 = styled.div`
+const Wrapper2 = styled.div``;
+
+const ContentTextWrapper = styled.div`
   padding-top: 10px;
 `;
-
-const ContentTextWrapper = styled.div``;
 
 const ContentText = styled.div`
   color: #393939;
