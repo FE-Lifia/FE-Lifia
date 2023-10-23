@@ -19,3 +19,5 @@ export const signUpSite = (email, password, name, nickname, apartment) => {
             return false;
         });
 };
+
+//
