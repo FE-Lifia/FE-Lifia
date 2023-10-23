@@ -2,34 +2,54 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import SecondContainer from "./SecondContainer";
 
-const ComentContainer = ({ coments }) => {
+const ComentContainer = ({ comments, setComments }) => {
+  const [showInput, setShowInput] = useState(false);
+  const [sendId, setSendId] = useState(0);
+
+  const handleShowInput = (num) => {
+    setShowInput(!showInput);
+    setSendId(num);
+  };
+
   return (
     <Wrapper>
       <TotalComentWrapper>
-        <TotalComent>댓글 2개</TotalComent>
+        <TotalComent>댓글 {comments.length}개</TotalComent>
       </TotalComentWrapper>
-      {coments.map((coment) => (
-        <ComentWrapper key={coment.id}>
-          <ComentName>{coment.name}</ComentName>
-          <ComentText>{coment.text}</ComentText>
-          <RightBoxWrapper>
-            <RightBox>
-              <ReplyNotifyWrapper>
-                <ReplyWrapper>
-                  <Reply>대댓글</Reply>
-                </ReplyWrapper>
-                <NotifyWrapper>
-                  <Notify>신고</Notify>
-                </NotifyWrapper>
-              </ReplyNotifyWrapper>
-              <TimeWrapper>
-                <TimeText>{coment.time}</TimeText>
-              </TimeWrapper>
-            </RightBox>
-          </RightBoxWrapper>
-        </ComentWrapper>
+      {comments.map((comment, index) => (
+        <>
+          <ComentWrapper key={index}>
+            <ComentName>{comment.name}</ComentName>
+            <ComentText>{comment.text}</ComentText>
+            <RightBoxWrapper>
+              <RightBox>
+                <ReplyNotifyWrapper>
+                  <ReplyWrapper>
+                    <Reply onClick={() => handleShowInput(comment.id)}>
+                      대댓글
+                    </Reply>
+                  </ReplyWrapper>
+                  <NotifyWrapper>
+                    <Notify>신고</Notify>
+                  </NotifyWrapper>
+                </ReplyNotifyWrapper>
+                <TimeWrapper>
+                  <TimeText>{comment.time}</TimeText>
+                </TimeWrapper>
+              </RightBox>
+            </RightBoxWrapper>
+          </ComentWrapper>
+          {comment.reply && (
+            <SecondContainer
+              commentReply={comment.reply}
+              showInput={showInput}
+              sendId={sendId}
+              commentId={comment.id}
+              setComments={setComments}
+            />
+          )}
+        </>
       ))}
-      <SecondContainer />
     </Wrapper>
   );
 };
@@ -92,7 +112,7 @@ const ReplyWrapper = styled.div`
   width: 50%;
 `;
 
-const Reply = styled.div`
+const Reply = styled.button`
   color: #545454;
   font-size: 16px;
   font-family: "Segoe UI", sans-serif;

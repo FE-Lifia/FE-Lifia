@@ -7,29 +7,45 @@ import NavBar from "../../components/NavBar";
 
 const NoticeDetail = () => {
   const [inputText, setInputText] = useState("");
-  const [coments, setComents] = useState([
+  const [comments, setComments] = useState([
     {
       id: 1,
       name: "바다",
       text: "어 저도 그거 궁금했어요",
       time: "2023-08-10 01:38",
+      reply: [
+        {
+          id: 1,
+          name: "스폰지밥",
+          text: "게살버거 맛있어요",
+          time: "2023-08-10 12:44",
+        },
+      ],
     },
     {
       id: 2,
       name: "포로리",
       text: "아 그거 별거 아니래요!",
       time: "2023-08-10 01:38",
+      reply: [
+        {
+          id: 1,
+          name: "바다",
+          text: "어 저도 그거 궁금했어요",
+          time: "2023-08-10 12:40",
+        },
+      ],
     },
   ]);
 
   const handleAddComent = (inputText, userId) => {
-    const newComent = {
-      id: coments.length + 1,
+    const newComment = {
+      id: comments.length + 1,
       name: userId,
       text: inputText,
       time: new Date().toLocaleString(),
     };
-    setComents([...coments, newComent]);
+    setComments([...comments, newComment]);
   };
 
   return (
@@ -37,7 +53,11 @@ const NoticeDetail = () => {
       <Container>
         <Container2>
           <Bord />
-          <MainContainer inputText={inputText} coments={coments} />
+          <MainContainer
+            inputText={inputText}
+            comments={comments}
+            setComments={setComments}
+          />
           <ComentInputContainer
             inputText={inputText}
             setInputText={setInputText}

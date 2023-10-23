@@ -3,7 +3,7 @@ import styled, { css, keyframes } from "styled-components";
 import ComentContainer from "./ComentContainer";
 import NotifyBox from "./NotifyBox";
 
-const MainContent = ({ coments }) => {
+const MainContent = ({ comments, setComments }) => {
   const [liked, setLiked] = useState(false);
   const [count, setCount] = useState(0);
   const [showWindow, setShowWindow] = useState(false);
@@ -59,7 +59,7 @@ const MainContent = ({ coments }) => {
           </VeryLikeButton>
         </VeryLikeWrapper>
       </Wrapper2>
-      <ComentContainer coments={coments} />
+      <ComentContainer comments={comments} setComments={setComments} />
     </>
   );
 };

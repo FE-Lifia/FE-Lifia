@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import MainContent from "./MainContent";
 
-const MainContainer = ({ coments }) => {
+const MainContainer = ({ comments, setComments }) => {
   return (
     <Wrapper>
       <Container>
-        <MainContent coments={coments} />
+        <MainContent comments={comments} setComments={setComments} />
       </Container>
     </Wrapper>
   );

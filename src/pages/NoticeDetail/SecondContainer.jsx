@@ -1,26 +1,43 @@
 import React from "react";
 import styled from "styled-components";
+import SecondInputContainer from "./SecondInputContainer";
 
-const SecondContainer = () => {
+const SecondContainer = ({
+  commentReply,
+  showInput,
+  sendId,
+  commentId,
+  setComments,
+}) => {
   return (
-    <Wrapper>
-      <SecondContainerWrapper>
-        <SecondContainerBox>
-          <SecondContainerName>바다</SecondContainerName>
-          <SecondContainerText>어 저도 그거 궁금했어요</SecondContainerText>
-          <RightBoxWrapper>
-            <RightBox>
-              <NotifyWrapper>
-                <Notify>신고</Notify>
-              </NotifyWrapper>
-              <TimeWrapper>
-                <TimeText>2023-08-10 01:38</TimeText>
-              </TimeWrapper>
-            </RightBox>
-          </RightBoxWrapper>
-        </SecondContainerBox>
-      </SecondContainerWrapper>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <SecondContainerWrapper>
+          {commentReply.map((reply) => (
+            <SecondContainerBox key={reply.id}>
+              <SecondContainerName>{reply.name}</SecondContainerName>
+              <SecondContainerText>{reply.text}</SecondContainerText>
+              <RightBoxWrapper>
+                <RightBox>
+                  <NotifyWrapper>
+                    <Notify>신고</Notify>
+                  </NotifyWrapper>
+                  <TimeWrapper>
+                    <TimeText>{reply.time}</TimeText>
+                  </TimeWrapper>
+                </RightBox>
+              </RightBoxWrapper>
+            </SecondContainerBox>
+          ))}
+          {sendId === commentId && showInput && (
+            <SecondInputContainer
+              setComments={setComments}
+              commentId={commentId}
+            />
+          )}
+        </SecondContainerWrapper>
+      </Wrapper>
+    </>
   );
 };
 
