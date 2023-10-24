@@ -4,7 +4,7 @@ import ColoredInputBox from "../../components/Input_Box/ColoredInputBox";
 import InputBoxwithIcon from "../../components/Input_Box/InputBoxWithIcon";
 import Button from "../../components/Button/LoginButton";
 
-const SignUpView = ({ onChangeApartment, onChangePassword, onChangeEmail, onClickSignupButton, onChangeRealname, onChangeNickname }) => {
+const SignUpView = ({ onChangeApartment, onChangePassword, onChangeEmail, onClickSignupButton, onChangeName, onChangeNickname }) => {
   
   return (
       <>
@@ -30,7 +30,7 @@ const SignUpView = ({ onChangeApartment, onChangePassword, onChangeEmail, onClic
 
                   {/* 3번째 */}
                   <InputBoxContainer style={{ display: "flex", flexDirection: "column", gap: "5px"}}>
-                      <ColoredInputBox placeholder="이름 (성명)" onChange={onChangeRealname} /> 
+                      <ColoredInputBox placeholder="이름 (성명)" onChange={onChangeName} /> 
                       <ColoredInputBox placeholder="닉네임" onChange={onChangeNickname} />
                       <div style={{ width: "inherit", margin: "10px 0 10px" }}>
                       <Button title="회원가입" onClick={onClickSignupButton} style={{ width: "inherit" }} />
