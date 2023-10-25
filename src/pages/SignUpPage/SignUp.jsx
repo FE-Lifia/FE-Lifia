@@ -35,16 +35,16 @@ const Signup = () => {
         } else if (checkEmailRegExp() === false) {
             alert("이메일 형식을 확인해주세요.");
             invalidField = emailInputRef;
+        }  else if (checkPasswordExp() === false) {
+            alert("비밀번호 형식을 확인해주세요.");
+            invalidField = passwordInputRef;
         } else if (nickname === "") {
             alert("닉네임을 입력해주세요.");
             invalidField = nicknameInputRef;
-        } else if (checkPasswordExp() === false) {
-            alert("비밀번호 형식을 확인해주세요.");
-            invalidField = passwordInputRef;
         } else {
             signUpSite(email, password, name, nickname, apartment).then((response) => {
                 if (response) {
-                    window.location.href = "/user-certification";
+                    window.location.href = "/login";
                 } else {
                     alert("네트워크 문제! 잠시후에 다시 시도해주세요! ");
                 }
@@ -61,7 +61,7 @@ const Signup = () => {
             onChangeApartment={setApartment} 
             onChangeEmail={setEmail}
             onChangePassword={setPassword}
-            onChangeRealname={setName} 
+            onChangeName={setName} 
             onChangeNickname={setNickname}
             onClickSignupButton={onClickSignupButton}
             apartmentInputRef={apartmentInputRef} 

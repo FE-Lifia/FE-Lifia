@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import LoginButton from "../components/Button/LoginButton";
-import InputBox from "../components/Input_Box/InputBox";
-import mainlogo from "../assets/Logo/mainlogo.png";
+import LoginButton from "../../components/Button/LoginButton"
+import InputBox from "../../components/Input_Box/InputBox";
+
 // 로그인 페이지
 
-const Login = ({
-  onChangeId,
+const LoginView = ({
+  onChangeEmail,
   onChangePassword,
   onClickLoginButton, //로그인
-  onClickFindAccount, //비밀번호 찾기
 }) => {
   //회원가입으로
   const onClickSignUp = () => {
@@ -19,7 +18,7 @@ const Login = ({
   return (
     <>
       <LoginViewLayout style={{ display: "flex", flexDirection: "column" }}>
-        <LogoImage src={mainlogo} />
+        {/* <LogoImage src={mainlogo} /> */}
         <LoginContainer>
           <InputBoxContainer
             style={{
@@ -29,7 +28,7 @@ const Login = ({
               marginBottom: "30px",
             }}
           >
-            <InputBox placeholder="ID" onChange={onChangeId} />
+            <InputBox placeholder="email" onChange={onChangeEmail} />
             <InputBox
               type="password"
               placeholder="PASSWORD"
@@ -117,4 +116,4 @@ const SignUpButton = styled.button`
   }
 `;
 
-export default Login;
+export default LoginView;
