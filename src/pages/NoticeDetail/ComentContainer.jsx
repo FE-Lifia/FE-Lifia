@@ -2,34 +2,52 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import SecondContainer from "./SecondContainer";
 
-const ComentContainer = ({ coments }) => {
+const ComentContainer = ({ coments, setComents }) => {
+  const [showInput, setShowInput] = useState(false);
+  const [selectId, setSelectId] = useState(null);
+
+  const handleShowInput = (id) => {
+    setShowInput(!showInput);
+    setSelectId(id);
+  };
   return (
     <Wrapper>
       <TotalComentWrapper>
         <TotalComent>댓글 2개</TotalComent>
       </TotalComentWrapper>
       {coments.map((coment) => (
-        <ComentWrapper key={coment.id}>
-          <ComentName>{coment.name}</ComentName>
-          <ComentText>{coment.text}</ComentText>
-          <RightBoxWrapper>
-            <RightBox>
-              <ReplyNotifyWrapper>
-                <ReplyWrapper>
-                  <Reply>대댓글</Reply>
-                </ReplyWrapper>
-                <NotifyWrapper>
-                  <Notify>신고</Notify>
-                </NotifyWrapper>
-              </ReplyNotifyWrapper>
-              <TimeWrapper>
-                <TimeText>{coment.time}</TimeText>
-              </TimeWrapper>
-            </RightBox>
-          </RightBoxWrapper>
-        </ComentWrapper>
+        <React.Fragment key={coment.id}>
+          <ComentWrapper>
+            <ComentName>{coment.name}</ComentName>
+            <ComentText>{coment.text}</ComentText>
+            <RightBoxWrapper>
+              <RightBox>
+                <ReplyNotifyWrapper>
+                  <ReplyWrapper>
+                    <Reply onClick={() => handleShowInput(coment.id)}>
+                      대댓글
+                    </Reply>
+                  </ReplyWrapper>
+                  <NotifyWrapper>
+                    <Notify>신고</Notify>
+                  </NotifyWrapper>
+                </ReplyNotifyWrapper>
+                <TimeWrapper>
+                  <TimeText>{coment.time}</TimeText>
+                </TimeWrapper>
+              </RightBox>
+            </RightBoxWrapper>
+          </ComentWrapper>
+          <SecondContainer
+            replies={coment.replies}
+            showInput={showInput}
+            handleInput={coment.id}
+            selectId={selectId}
+            coments={coments}
+            setComents={setComents}
+          />
+        </React.Fragment>
       ))}
-      <SecondContainer />
     </Wrapper>
   );
 };
@@ -92,7 +110,7 @@ const ReplyWrapper = styled.div`
   width: 50%;
 `;
 
-const Reply = styled.div`
+const Reply = styled.button`
   color: #545454;
   font-size: 16px;
   font-family: "Segoe UI", sans-serif;
