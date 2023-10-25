@@ -7,6 +7,7 @@ import SignUp from "./pages/SignUpPage/SignUp";
 import NotFound from "./NotFound";
 import Login from "./pages/Login";
 import NoticeDetail from "./pages/NoticeDetail";
+import NoticeList from "./pages/NoticeList";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/SignUp" element={<SignUp />}></Route>
         <Route path="/NoticeDetail" element={<NoticeDetail />}></Route>
+        <Route path="/NoticeList" element={<NoticeList />}></Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
