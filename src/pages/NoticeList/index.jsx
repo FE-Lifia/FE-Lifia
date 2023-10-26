@@ -1,15 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import NoticeContainer1 from "./NoticeContainer1";
+import NavBar2 from "../../components/NavBar2";
 
 const NoticeList = () => {
   return (
     <Wrapper>
       <Container>
+        <NavContainer>
+          <NavBar2 />
+        </NavContainer>
         <Container2>
           <NoticeContainer1 />
         </Container2>
-        <NavContainer></NavContainer>
       </Container>
     </Wrapper>
   );
@@ -32,7 +35,7 @@ const Container2 = styled.div`
 `;
 
 const NavContainer = styled.div`
-  margin-left: 3%;
+  margin-right: 3%;
 `;
 
 export default NoticeList;

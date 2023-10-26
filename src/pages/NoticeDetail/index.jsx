@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Bord from "./Bord";
 import MainContainer from "./MainContainer";
 import ComentInputContainer from "./ComentInputContainer";
-import NavBar from "../../components/NavBar";
+import NavBar1 from "../../components/NavBar1";
 
 const NoticeDetail = () => {
   const [inputText, setInputText] = useState("");
@@ -63,7 +63,7 @@ const NoticeDetail = () => {
           />
         </Container2>
         <NavContainer>
-          <NavBar />
+          <NavBar1 />
         </NavContainer>
       </Container>
     </Wrapper>
