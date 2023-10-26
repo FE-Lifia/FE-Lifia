@@ -3,7 +3,14 @@ import styled from "styled-components";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
 const RegisterInputContainer = ({ noticeOtion, setNoticeOption }) => {
-  const options = ["공구해요", "배달해요", "조심해요", "투표해요", "육아해요"];
+  const options = [
+    "자유게시판",
+    "공구해요",
+    "배달해요",
+    "조심해요",
+    "투표해요",
+    "육아해요",
+  ];
   const [isOpen, setIsOpen] = useState(false);
 
   const handleItemClick = (option) => {

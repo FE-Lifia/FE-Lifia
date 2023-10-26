@@ -26,7 +26,11 @@ const Register = () => {
             noticeText={noticeText}
             setNoticeText={setNoticeText}
           />
-          <ButtonContainer />
+          <ButtonContainer
+            noticeOtion={noticeOtion}
+            titleText={titleText}
+            noticeText={noticeText}
+          />
         </Container1>
       </Container>
     </Wrapper>
