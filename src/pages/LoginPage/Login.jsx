@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import LoginView from "./LoginView";
 import { loginSite } from "../../api/loginSite";
 
@@ -12,8 +11,7 @@ const Login = () => {
     window.location.href = "/signup";
   };
 
-  const setUserTokenInLocalStorage = (userEmail, accessToken, refreshToken) => {
-    localStorage.setItem("user_email", userEmail); // TODO: 수정필요
+  const setUserTokenInLocalStorage = (accessToken, refreshToken) => {
     localStorage.setItem("accessToken", accessToken);
     localStorage.setItem("refreshToken", refreshToken);
   };
@@ -21,8 +19,9 @@ const Login = () => {
   const onClickLoginButton = () => {
     loginSite(email, password).then((response) => {
       if (response.accessToken) {
-        const { accessToken, refreshToken, user_email } = response;
-        setUserTokenInLocalStorage(user_email, accessToken, refreshToken);
+        const { accessToken, refreshToken } = response;
+        console.log(response.accessToken);
+        setUserTokenInLocalStorage(accessToken, refreshToken);
         window.location.href = "/";
       }
     });
