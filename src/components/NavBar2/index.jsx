@@ -30,6 +30,7 @@ const NavBar = () => {
 
 const Wrapper = styled.div`
   width: 250px;
+  margin-top: 20px;
 `;
 
 const TopTitleWrapper = styled.div`
