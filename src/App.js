@@ -22,7 +22,8 @@ function App() {
         <Route path="/NoticeDetail" element={<NoticeDetail />}></Route>
         <Route path="/NoticeList" element={<NoticeList />}></Route>
         <Route path="/register" element={<RegisterPage />}></Route>
-        <Route path="/*" element={<NotFound />} />
+        {/* <Route path="/*" element={<NotFound />} /> */}
+        <Route path=":catchall" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
