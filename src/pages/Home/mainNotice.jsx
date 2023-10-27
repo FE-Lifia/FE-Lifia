@@ -1,6 +1,9 @@
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { noticeListApi } from "../../api/noticeListApi";
 
 const MainNotice = () => {
+  const [latestBoardItems, setLatestBoardItems] = useState([]);
   const HotBordItems = () => {
     const boardItems = [];
     for (let i = 0; i < 10; i++) {
@@ -17,6 +20,43 @@ const MainNotice = () => {
     return boardItems;
   };
 
+  useEffect(() => {
+    const fetchLatestBoardItems = async () => {
+      const token = localStorage.getItem("accessToken");
+      try {
+        const response = await noticeListApi(token, "freeBoards", 1);
+        const boards = response.freeBoards;
+        setLatestBoardItems(
+          boards.map((board, index) => (
+            <BoardItem key={board.freeBoardPostId}>
+              <BordNum>{index + 1}</BordNum>
+              <BoardCategory>자유게시판</BoardCategory>
+              <BoardItemTitle>{board.title}</BoardItemTitle>
+            </BoardItem>
+          ))
+        );
+      } catch (error) {
+        console.error("Error fetching board items:", error);
+      }
+    };
+
+    fetchLatestBoardItems();
+  }, []);
+
+  // const latestBoradItems = () => {
+  //   const token = localStorage.getItem("accessToken");
+  //   noticeListApi(token, "freeBoards", 1).then((response) => {
+  //     const boards = response.freeBoards;
+  //     return boards.map((e) => (
+  //       <BoardItem key={e.freeBoardPostId}>
+  //         <BordNum>1</BordNum>
+  //         <BoardCategory>자유게시판</BoardCategory>
+  //         <BoardItemTitle>{e.title}</BoardItemTitle>
+  //       </BoardItem>
+  //     ));
+  //   });
+  // };
+
   return (
     <MainNoticeWrapper>
       <Container>
@@ -26,11 +66,7 @@ const MainNotice = () => {
         </NoticeWrapper>
         <NoticeWrapper>
           <NoticeTitle>최신 게시판</NoticeTitle>
-          <BoardList>
-            <BoardItem>
-              <BoardItemTitle>게시글 제목</BoardItemTitle>
-            </BoardItem>
-          </BoardList>
+          <BoardList>{latestBoardItems}</BoardList>
         </NoticeWrapper>
       </Container>
     </MainNoticeWrapper>

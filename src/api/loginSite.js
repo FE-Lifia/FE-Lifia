@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export const loginSite = async (email, password) => {
-  console.log(email, password, process.env.REACT_APP_SERVER_URL);
   try {
     const response = await axios.post(
       `${process.env.REACT_APP_SERVER_URL}/auth/login`,
@@ -11,7 +10,6 @@ export const loginSite = async (email, password) => {
       }
     );
     if (response.data.statusCode === 200 && response.data.data.accessToken) {
-      console.log(response.data);
       const { accessToken, refreshToken } = response.data.data;
       return {
         accessToken: accessToken,

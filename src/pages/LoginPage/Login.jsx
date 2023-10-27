@@ -18,7 +18,6 @@ const Login = () => {
 
   const onClickLoginButton = () => {
     loginSite(email, password).then((response) => {
-      console.log(response);
       if (response.accessToken) {
         const { accessToken, refreshToken } = response;
         console.log(response.accessToken);

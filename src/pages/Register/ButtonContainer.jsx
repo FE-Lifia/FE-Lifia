@@ -4,7 +4,6 @@ import { createNoticeApi } from "../../api/createNoticeApi";
 
 const ButtonContainer = ({ noticeOtion, titleText, noticeText }) => {
   const handleApiButton = () => {
-    console.log(noticeOtion, titleText, noticeText);
     const accessToken = localStorage.getItem("accessToken");
     if (noticeOtion === "자유게시판") noticeOtion = "freeBoards";
     if (noticeOtion === "공구해요") noticeOtion = "coBuying";
