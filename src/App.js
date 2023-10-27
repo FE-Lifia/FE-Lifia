@@ -1,6 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -14,20 +13,18 @@ import RegisterPage from "./pages/Register";
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/main" element={<Home />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/SignUp" element={<SignUp />}></Route>
-          <Route path="/NoticeDetail" element={<NoticeDetail />}></Route>
-          <Route path="/NoticeList" element={<NoticeList />}></Route>
-          <Route path="/register" element={<RegisterPage />}></Route>
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/main" element={<Home />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/SignUp" element={<SignUp />}></Route>
+        <Route path="/NoticeDetail" element={<NoticeDetail />}></Route>
+        <Route path="/NoticeList" element={<NoticeList />}></Route>
+        <Route path="/register" element={<RegisterPage />}></Route>
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
