@@ -11,7 +11,6 @@ const InputBox = ({
 
   const handleInput = (e) => {
     setInputValue(e.target.value);
-    console.log(inputValue);
   };
 
   return (
