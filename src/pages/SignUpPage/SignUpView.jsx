@@ -1,44 +1,69 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import ColoredInputBox from "../../components/Input_Box/ColoredInputBox";
 import InputBoxwithIcon from "../../components/Input_Box/InputBoxWithIcon";
 import Button from "../../components/Button/LoginButton";
 
-const SignUpView = ({ onChangeApartment, onChangePassword, onChangeEmail, onClickSignupButton, onChangeName, onChangeNickname }) => {
-  
+const SignUpView = ({
+  onChangeApartment,
+  onChangePassword,
+  onChangeEmail,
+  onClickSignupButton,
+  onChangeName,
+  onChangeNickname,
+}) => {
   return (
-      <>
-          <SignupViewLayout  style={{ display: "flex", flexDirection: "column" }}>
-              <SignUpContainer >
+    <>
+      <SignupViewLayout style={{ display: "flex", flexDirection: "column" }}>
+        <SignUpContainer>
+          {/* 아파트입력 */}
+          <InputBoxContainer
+            style={{ display: "flex", flexDirection: "column", gap: "5px" }}
+          >
+            <LogoImage src={"../leftlogo.png"} />
+            <InputBoxwithIcon
+              placeholder="아파트명 검색"
+              onChange={onChangeApartment}
+            />
 
-                  {/* 아파트입력 */}
-                  <InputBoxContainer style={{ display: "flex", flexDirection: "column", gap: "5px"}}>
-                  <LogoImage src={"../leftlogo.png"} />
-                      <InputBoxwithIcon placeholder="아파트명 검색" onChange={onChangeApartment} />
+            <Title2 style={{ fontSize: "0.3rem" }}>
+              {" "}
+              * 사진은 인증 외의 용도로 활용되지 않습니다.{" "}
+            </Title2>
+          </InputBoxContainer>
 
-                      <Title2 style={{ fontSize: "0.3rem" }}>
-                          {" "}
-                          * 사진은 인증 외의 용도로 활용되지 않습니다.{" "}
-                      </Title2>
-                  </InputBoxContainer>
+          {/* 비번 입력 */}
+          <InputBoxContainer
+            style={{ display: "flex", flexDirection: "column", gap: "5px" }}
+          >
+            <ColoredInputBox placeholder="EMAIL" onChange={onChangeEmail} />
+            <ColoredInputBox
+              placeholder="PASSWORD"
+              onChange={onChangePassword}
+              type="password"
+            />
+          </InputBoxContainer>
 
-                  {/* 비번 입력 */}
-                  <InputBoxContainer style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-                      <ColoredInputBox placeholder="EMAIL" onChange={onChangeEmail}  />
-                      <ColoredInputBox placeholder="PASSWORD" onChange={onChangePassword} type="password" />
-                  </InputBoxContainer>
-
-                  {/* 3번째 */}
-                  <InputBoxContainer style={{ display: "flex", flexDirection: "column", gap: "5px"}}>
-                      <ColoredInputBox placeholder="이름 (성명)" onChange={onChangeName} /> 
-                      <ColoredInputBox placeholder="닉네임" onChange={onChangeNickname} />
-                      <div style={{ width: "inherit", margin: "10px 0 10px" }}>
-                      <Button title="회원가입" onClick={onClickSignupButton} style={{ width: "inherit" }} />
-                  </div>
-                  </InputBoxContainer>
-              </SignUpContainer>
-          </SignupViewLayout>
-      </>
+          {/* 3번째 */}
+          <InputBoxContainer
+            style={{ display: "flex", flexDirection: "column", gap: "5px" }}
+          >
+            <ColoredInputBox
+              placeholder="이름 (성명)"
+              onChange={onChangeName}
+            />
+            <ColoredInputBox placeholder="닉네임" onChange={onChangeNickname} />
+            <div style={{ width: "inherit", margin: "10px 0 10px" }}>
+              <Button
+                title="회원가입"
+                onClick={onClickSignupButton}
+                style={{ width: "inherit" }}
+              />
+            </div>
+          </InputBoxContainer>
+        </SignUpContainer>
+      </SignupViewLayout>
+    </>
   );
 };
 
@@ -47,7 +72,7 @@ const Title2 = styled.p`
   color: #747474;
 
   @media (max-width: 760px) {
-      font-size: 13px;
+    font-size: 13px;
   }
 `;
 
@@ -56,10 +81,10 @@ const SignupViewLayout = styled.div`
   width: 100%;
   min-height: 90vh;
   flex-direction: row;
-  background: linear-gradient(to right, #44BAD8, #5CA1E4, #6F96E1);
+  background: linear-gradient(to right, #44bad8, #5ca1e4, #6f96e1);
 
   @media (max-width: 760px) {
-      flex-direction: column;
+    flex-direction: column;
   }
 `;
 
@@ -73,8 +98,8 @@ const SignUpContainer = styled.div`
   margin: 0 auto;
 
   @media (max-width: 760px) {
-      width: 100%;
-      margin: 0;
+    width: 100%;
+    margin: 0;
   }
 `;
 
@@ -86,7 +111,7 @@ const InputBoxContainer = styled.div`
   margin-top: 30px;
 
   @media (max-width: 760px) {
-      margin-top: 1px;
+    margin-top: 1px;
   }
 `;
 

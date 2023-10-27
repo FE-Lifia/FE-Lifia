@@ -14,6 +14,12 @@ export const createNoticeApi = async (
         title: title,
         content: content,
       }
+      // {
+      //   headers: {
+      //     Authorization: `Bearer ${accessToken}`,
+      //     "Content-Type": "application/json",
+      //   },
+      // }
     );
     if (response.data.statusCode === 200 && response.data.data.accessToken) {
       return response.data.statusCode;
