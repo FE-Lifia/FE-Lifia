@@ -3,6 +3,7 @@ import { debounce } from "lodash";
 
 const InputBox = ({
   placeholder,
+  onChange,
   background = "#FAFAFA",
   type = "text",
   useDebounce = false,
@@ -10,6 +11,7 @@ const InputBox = ({
   const [inputValue, setInputValue] = useState("");
 
   const handleInput = (e) => {
+    onChange(e.target.value);
     setInputValue(e.target.value);
   };
 
