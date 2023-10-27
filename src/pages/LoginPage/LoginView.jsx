@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import LoginButton from "../../components/Button/LoginButton"
+import LoginButton from "../../components/Button/LoginButton";
 import InputBox from "../../components/Input_Box/InputBox";
 
 // 로그인 페이지
@@ -18,7 +18,6 @@ const LoginView = ({
   return (
     <>
       <LoginViewLayout style={{ display: "flex", flexDirection: "column" }}>
-        {/* <LogoImage src={mainlogo} /> */}
         <LoginContainer>
           <InputBoxContainer
             style={{
@@ -93,12 +92,6 @@ const InputBoxContainer = styled.div`
   @media (max-width: 760px) {
     margin-top: 10px;
   }
-`;
-
-const LogoImage = styled.img`
-  width: 15%;
-  margin: 0 auto;
-  margin-bottom: 10px;
 `;
 
 const SignUpButton = styled.button`

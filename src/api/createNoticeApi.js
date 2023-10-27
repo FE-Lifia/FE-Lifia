@@ -10,9 +10,14 @@ export const createNoticeApi = async (
     const response = await axios.post(
       `${process.env.REACT_APP_SERVER_URL}/${noticeType}/board`,
       {
-        accessToken: accessToken,
         title: title,
         content: content,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
       }
     );
     if (response.data.statusCode === 200 && response.data.data.accessToken) {
