@@ -6,6 +6,8 @@ import ComentInputContainer from "./ComentInputContainer";
 import NavBar1 from "../../components/NavBar1";
 
 const NoticeDetail = () => {
+  const { postId } = this.props.location.state;
+  console.log(postId);
   const [inputText, setInputText] = useState("");
   const [coments, setComents] = useState([
     {

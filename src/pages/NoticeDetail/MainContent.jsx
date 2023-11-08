@@ -24,9 +24,7 @@ const MainContent = ({ coments, setComents }) => {
 
   return (
     <>
-      <ContentTitle>
-        오늘 오후에 203동 쪽에 구급차 온거 무슨 일이에요?
-      </ContentTitle>
+      <ContentTitle>뭘봐</ContentTitle>
       <Wrapper1>
         <ProfileWrapper>
           <ProfileImg src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTExMDlfNjMg%2FMDAxNTczMjI4MDg1MDkx.RVmiYNHzjQ8YU_aJ44hV0br18NTrJqUPnx1rbLchuEEg.DCk3wfZj59hS9HKJKn3u1yM34S_iflVSj__XGU__QH8g.JPEG.jane1112%2Ff132149948843548000%25280%2529.jpg&type=sc960_832" />
@@ -42,17 +40,14 @@ const MainContent = ({ coments, setComents }) => {
       <Wrapper2>
         {showWindow && <NotifyBox setShowWindow={setShowWindow} />}
         <ContentTextWrapper>
-          <ContentText>
-            구급차도 여러대 오고 사람들도 몰려있었는데 무슨 일인지 아시는 분
-            계신가요? 요즘 워낙 흉흉해서 걱정되네요...
-          </ContentText>
+          <ContentText>어쩌라고</ContentText>
         </ContentTextWrapper>
         <ContentImgWrapper>
           <ContentImg src="https://cdn.idjnews.kr/news/photo/202003/120152_80356_3733.png" />
         </ContentImgWrapper>
-        <LikeWrapper>
+        {/* <LikeWrapper>
           <LikeButton>좋아요 4</LikeButton>
-        </LikeWrapper>
+        </LikeWrapper> */}
         <VeryLikeWrapper>
           <VeryLikeButton liked={liked} onClick={handleLikeButtonClick}>
             {liked ? "취소" : "좋아요"} {count}
@@ -174,7 +169,7 @@ const pulse = keyframes`
 const VeryLikeButton = styled.button`
   width: 157px;
   height: 59px;
-  background-color: ${({ liked }) => (liked ? "#ff6b6b" : "#adb0b7")};
+  background-color: ${({ liked }) => (liked ? "#8D9BE2" : "#adb0b7")};
   border-radius: 11px;
   color: #ffffff;
   font-size: 21px;

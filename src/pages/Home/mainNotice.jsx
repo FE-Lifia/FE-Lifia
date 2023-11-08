@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { noticeListApi } from "../../api/noticeListApi";
+import { Link } from "react-router-dom";
 
 const MainNotice = () => {
   const [latestBoardItems, setLatestBoardItems] = useState([]);
+
   const HotBordItems = () => {
     const boardItems = [];
     for (let i = 0; i < 10; i++) {
@@ -31,7 +33,16 @@ const MainNotice = () => {
             <BoardItem key={board.freeBoardPostId}>
               <BordNum>{index + 1}</BordNum>
               <BoardCategory>자유게시판</BoardCategory>
-              <BoardItemTitle>{board.title}</BoardItemTitle>
+              <BoardItemTitle>
+                <Link
+                  to={{
+                    pathname: "/NoticeDetail",
+                    state: { postId: `${board.freeBoardPostId}` },
+                  }}
+                >
+                  {board.title}
+                </Link>
+              </BoardItemTitle>
             </BoardItem>
           ))
         );
@@ -42,20 +53,6 @@ const MainNotice = () => {
 
     fetchLatestBoardItems();
   }, []);
-
-  // const latestBoradItems = () => {
-  //   const token = localStorage.getItem("accessToken");
-  //   noticeListApi(token, "freeBoards", 1).then((response) => {
-  //     const boards = response.freeBoards;
-  //     return boards.map((e) => (
-  //       <BoardItem key={e.freeBoardPostId}>
-  //         <BordNum>1</BordNum>
-  //         <BoardCategory>자유게시판</BoardCategory>
-  //         <BoardItemTitle>{e.title}</BoardItemTitle>
-  //       </BoardItem>
-  //     ));
-  //   });
-  // };
 
   return (
     <MainNoticeWrapper>
@@ -139,6 +136,7 @@ const BoardItemTitle = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 `;
 
 const BoardCategory = styled.div`
